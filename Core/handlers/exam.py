@@ -3,13 +3,14 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 from Core.keyboards.inline import get_inline_keyboard
 from Core.utils.steps_exam import StepsExam
+from Core.Dictonary import QuestionsA
 
 async def start_exam(message: Message, state: FSMContext):
-    await message.answer(f"{message.from_user.first_name} для начала экзамена отправте любое сообщение")
+    await message.answer(f"{message.from_user.first_name} {QuestionsA.INTRO}")
     await state.set_state(StepsExam.START_EXAM)
 
 async def qwestion1(message: Message, state: FSMContext):
-    await message.answer(f"{message.from_user.first_name} Enter answer1", reply_markup=get_inline_keyboard())
+    await message.answer(QuestionsA.QUESTION1)
     await state.set_state(StepsExam.GET_ANSWER1)
 
 async def qwestion2(message: Message, state: FSMContext):
