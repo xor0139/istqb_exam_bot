@@ -14,7 +14,7 @@ async def qwestion1(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER1)
 
 async def qwestion2(message: Message, state: FSMContext):
-    await message.answer(f"{message.from_user.first_name} Enter answer2")
+    await message.answer(QuestionsA.QUESTION2)
     await state.update_data(answer1=message.text)
     await state.set_state(StepsExam.GET_ANSWER2)
 
