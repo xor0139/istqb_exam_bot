@@ -21,7 +21,16 @@ async def start_bot():
     dp.message.register(exam.start_exam, Command(commands="exam"))
     dp.message.register(exam.qwestion1, StepsExam.START_EXAM)
     dp.message.register(exam.qwestion2, StepsExam.GET_ANSWER1)
-    dp.message.register(exam.finish, StepsExam.GET_ANSWER2)
+    dp.message.register(exam.qwestion3, StepsExam.GET_ANSWER2)
+    dp.message.register(exam.qwestion4, StepsExam.GET_ANSWER3)
+    dp.message.register(exam.qwestion5, StepsExam.GET_ANSWER4)
+    dp.message.register(exam.qwestion6, StepsExam.GET_ANSWER5)
+    dp.message.register(exam.qwestion7, StepsExam.GET_ANSWER6)
+    dp.message.register(exam.qwestion8, StepsExam.GET_ANSWER7)
+    dp.message.register(exam.qwestion9, StepsExam.GET_ANSWER8)
+    dp.message.register(exam.qwestion10, StepsExam.GET_ANSWER9)
+    dp.message.register(exam.finish, StepsExam.GET_ANSWER10)
+
     dp.callback_query.register(select_answer)
     try:
         await dp.start_polling(bot)
