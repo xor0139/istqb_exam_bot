@@ -5,6 +5,7 @@ from Core.keyboards.inline import get_inline_keyboard
 from Core.utils.steps_exam import StepsExam
 from Core.Dictonary import QuestionsA, AnswersA
 from Core.utils.match_answer import match
+from aiogram.types import FSInputFile
 
 async def start_exam_A(message: Message, state: FSMContext):
     await message.answer(f"{message.from_user.first_name} {QuestionsA.INTRO}")
@@ -140,12 +141,16 @@ async def qwestion26_A(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER26_A)
 
 async def qwestion27_A(message: Message, state: FSMContext):
-    await message.answer(QuestionsA.QUESTION27)
+    image = FSInputFile("Core/image/27A.png")
+    await message.answer_photo(image, caption=QuestionsA.QUESTION27)
+    # await message.answer(QuestionsA.QUESTION27)
     await state.update_data(answer26=message.text)
     await state.set_state(StepsExam.GET_ANSWER27_A)
 
 async def qwestion28_A(message: Message, state: FSMContext):
-    await message.answer(QuestionsA.QUESTION28)
+    image = FSInputFile("Core/image/28A.png")
+    await message.answer_photo(image, caption=QuestionsA.QUESTION28)
+    # await message.answer(QuestionsA.QUESTION28)
     await state.update_data(answer27=message.text)
     await state.set_state(StepsExam.GET_ANSWER28_A)
 
@@ -190,7 +195,9 @@ async def qwestion36_A(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER36_A)
 
 async def qwestion37_A(message: Message, state: FSMContext):
-    await message.answer(QuestionsA.QUESTION37)
+    image = FSInputFile("Core/image/37A.png")
+    await message.answer_photo(image, caption=QuestionsA.QUESTION37)
+    # await message.answer(QuestionsA.QUESTION37)
     await state.update_data(answer36=message.text)
     await state.set_state(StepsExam.GET_ANSWER37_A)
 
