@@ -17,9 +17,8 @@ async def start_bot():
 
     dp = Dispatcher()
     dp.message.register(get_start, Command(commands=["start", "go"]))
-    dp.message.register(get_inline, Command(commands="inline"))
 
-    dp.message.register(exam.start_exam_A, Command(commands="exam"))
+    dp.message.register(exam.start_exam_A, Command(commands=["A", "a", "A", "a"]))
     dp.message.register(exam.qwestion1_A, StepsExam.START_EXAM_A)
     dp.message.register(exam.qwestion2_A, StepsExam.GET_ANSWER1_A)
     dp.message.register(exam.qwestion3_A, StepsExam.GET_ANSWER2_A)

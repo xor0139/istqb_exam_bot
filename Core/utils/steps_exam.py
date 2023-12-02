@@ -1,6 +1,7 @@
 from aiogram.fsm.state import StatesGroup, State
 
 class StepsExam(StatesGroup):
+    INTRO_A = State()
     START_EXAM_A = State()
     GET_ANSWER1_A = State()
     GET_ANSWER2_A = State()

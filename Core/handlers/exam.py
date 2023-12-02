@@ -1,11 +1,10 @@
 from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
-from aiogram.types import CallbackQuery
-from Core.keyboards.inline import get_inline_keyboard
 from Core.utils.steps_exam import StepsExam
 from Core.Dictonary import QuestionsA, AnswersA
 from Core.utils.match_answer import match
 from aiogram.types import FSInputFile
+
 
 async def start_exam_A(message: Message, state: FSMContext):
     await message.answer(f"{message.from_user.first_name} {QuestionsA.INTRO}")
@@ -261,5 +260,7 @@ async def finish_A(message: Message, state: FSMContext):
     f"Вопрос #38: {await match(str(answers.get('answer38')), AnswersA.ANSWER38)}\n" \
     f"Вопрос #39: {await match(str(answers.get('answer39')), AnswersA.ANSWER39)}\n" \
     f"Вопрос #40: {await match(str(answers.get('answer40')), AnswersA.ANSWER40)}\n"
+    ball = txt.count("Верно") * 2.5
+    await message.answer(f"Ваш процент верных ответов: {ball}%")
     await message.answer(txt)
     await state.clear()
