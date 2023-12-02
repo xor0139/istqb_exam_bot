@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher
 import asyncio
 import logging
-from Core.handlers.basic import get_start, get_inline
+from Core.handlers.basic import get_start
 from Core.settings import settings
 from aiogram.types import message, ContentType
 from aiogram.filters import Command
