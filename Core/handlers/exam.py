@@ -149,7 +149,6 @@ async def qwestion27_A(message: Message, state: FSMContext):
 async def qwestion28_A(message: Message, state: FSMContext):
     image = FSInputFile("Core/image/28A.png")
     await message.answer_photo(image, caption=QuestionsA.QUESTION28)
-    # await message.answer(QuestionsA.QUESTION28)
     await state.update_data(answer27=message.text)
     await state.set_state(StepsExam.GET_ANSWER28_A)
 
@@ -384,12 +383,14 @@ async def qwestion23_B(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER23_B)
 
 async def qwestion24_B(message: Message, state: FSMContext):
-    await message.answer(QuestionsB.QUESTION24)
+    image = FSInputFile("Core/image/24B.png")
+    await message.answer_photo(image, caption=QuestionsB.QUESTION24)
     await state.update_data(answer23=message.text)
     await state.set_state(StepsExam.GET_ANSWER24_B)
 
 async def qwestion25_B(message: Message, state: FSMContext):
-    await message.answer(QuestionsB.QUESTION25)
+    image = FSInputFile("Core/image/25B.png")
+    await message.answer_photo(image, caption=QuestionsB.QUESTION25)
     await state.update_data(answer24=message.text)
     await state.set_state(StepsExam.GET_ANSWER25_B)
 
@@ -399,14 +400,12 @@ async def qwestion26_B(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER26_B)
 
 async def qwestion27_B(message: Message, state: FSMContext):
-    image = FSInputFile("Core/image/27A.png")
-    await message.answer_photo(image, caption=QuestionsB.QUESTION27)
+    await message.answer(QuestionsB.QUESTION27)
     await state.update_data(answer26=message.text)
     await state.set_state(StepsExam.GET_ANSWER27_B)
 
 async def qwestion28_B(message: Message, state: FSMContext):
-    image = FSInputFile("Core/image/28A.png")
-    await message.answer_photo(image, caption=QuestionsB.QUESTION28)
+    await message.answer(QuestionsB.QUESTION28)
     await state.update_data(answer27=message.text)
     await state.set_state(StepsExam.GET_ANSWER28_B)
 
@@ -431,7 +430,8 @@ async def qwestion32_B(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER32_B)
 
 async def qwestion33_B(message: Message, state: FSMContext):
-    await message.answer(QuestionsB.QUESTION33)
+    image = FSInputFile("Core/image/33B.png")
+    await message.answer_photo(image, caption=QuestionsB.QUESTION33)
     await state.update_data(answer32=message.text)
     await state.set_state(StepsExam.GET_ANSWER33_B)
 
@@ -451,8 +451,7 @@ async def qwestion36_B(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER36_B)
 
 async def qwestion37_B(message: Message, state: FSMContext):
-    image = FSInputFile("Core/image/37A.png")
-    await message.answer_photo(image, caption=QuestionsB.QUESTION37)
+    await message.answer(QuestionsB.QUESTION37)
     await state.update_data(answer36=message.text)
     await state.set_state(StepsExam.GET_ANSWER37_B)
 
