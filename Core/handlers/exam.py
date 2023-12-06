@@ -1,7 +1,7 @@
 from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 from Core.utils.steps_exam import StepsExam
-from Core.Dictonary import QuestionsA, AnswersA
+from Core.Dictonary import QuestionsA, AnswersA, AnswersB, QuestionsB
 from Core.utils.match_answer import match
 from aiogram.types import FSInputFile
 
