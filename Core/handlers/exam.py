@@ -373,7 +373,8 @@ async def qwestion21_B(message: Message, state: FSMContext):
     await state.set_state(StepsExam.GET_ANSWER21_B)
 
 async def qwestion22_B(message: Message, state: FSMContext):
-    await message.answer(QuestionsB.QUESTION22)
+    image = FSInputFile("Core/image/22B.png")
+    await message.answer_photo(image, caption=QuestionsB.QUESTION22)
     await state.update_data(answer21=message.text)
     await state.set_state(StepsExam.GET_ANSWER22_B)
 
